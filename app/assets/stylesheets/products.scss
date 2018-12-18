@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.product-img img {
+	width: 100%;
+}
+
 .product-info {
 	background-color: #FDBEB4;
 	padding: 5% 5% 1% 5%;
@@ -23,4 +27,8 @@ p.v-line::after {
   margin-left: 1%;
   margin-top: 1%;
   background: #8A3324;
+}
+
+.price {
+	text-align: right;
 }

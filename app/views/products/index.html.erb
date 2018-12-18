@@ -8,11 +8,20 @@
     <% @products.each do |product| %>
       <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="product-img">
-          <p><%= product.image_url %></p>
+          <%= image_tag(product.image_url, class: "image-fluid") %>
         </div>
         <div class="product-info">
           <p><strong><%= product.name.upcase %></strong></p>
           <p><%= product.description %></p>
+          <p><%= product.variety %></p>
+          <div class="row">
+            <div class="col">
+              <p><%= product.quantity %>g</p>
+            </div>
+            <div class="col">
+              <p class="price"><%= number_with_precision(product.price, :precision => 2) %>€</p>
+            </div>
+          </div>
         </div>
         <div class="product-buttons">
           <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
