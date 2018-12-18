@@ -2,26 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* { box-sizing: border-box; }
-
-body {
-	color: #8A3324;
-	height: 100%;
-}
-
-/* Typography */
-h1,
-h2 {
-	font-family: 'Open Sans', sans-serif;
-}
-
-p,
-li {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-}
-
-
 /* Navbar */
 .navbar-dark {
 	background-color: #8A3324;

@@ -1,0 +1,26 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product-info {
+	background-color: #FDBEB4;
+	padding: 5% 5% 1% 5%;
+}
+
+.product-buttons p {
+	float: right;
+	padding-right: 2%;
+	margin-top: 2%;
+  margin-bottom: 8%;
+
+}
+
+p.v-line::after {
+	content: "";
+  position: absolute;
+  width: 0.1em;
+  height: 1em;
+  margin-left: 1%;
+  margin-top: 1%;
+  background: #8A3324;
+}

@@ -1,0 +1,28 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+	
+	<div class="container-fluid">
+    <div class="row">
+    	<div class="col-sm-12 col-md-3 col-lg-3"></div>
+    	<div class="col-sm-12 col-md-6 col-lg-6">
+				<div class="product-img">
+  			  <p><%= @product.image_url %></p>
+  			</div>
+				<p>
+					<strong>
+						<%= @product.name.upcase %>
+					</strong>
+				</p>
+				<p>
+				  <%= @product.description %>
+				</p>
+				
+				<div class="product-buttons">
+					<p><%= link_to 'Back', products_path %></p>
+					<p class="v-line"><%= link_to 'Edit', edit_product_path(@product) %></p>
+				</div>
+			</div><!-- end col -->
+		</div><!-- end row -->
+	</div>
+
+</div>
