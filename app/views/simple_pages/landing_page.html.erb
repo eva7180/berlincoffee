@@ -1,0 +1,28 @@
+<div class="container">
+	<h1>Featured Product:</h1>
+	
+	<div class="container-fluid">
+    <div class="row">
+    	<div class="col-sm-12 col-md-3 col-lg-3"></div>
+    	<div class="col-sm-12 col-md-6 col-lg-6">
+				<div class="product-img">
+  			  <%= image_tag(@featured_product.image_url, class: "image-fluid") %>
+  			</div>
+  			<div class="product-info">
+					<p><strong><%= @featured_product.name.upcase %></strong></p>
+					<p><%= @featured_product.description %></p>
+					<p><%= @featured_product.variety %></p>
+					<div class="row">
+						<div class="col">
+							<p class="qty"><%= @featured_product.quantity %>g</p>
+						</div>
+						<div class="col">
+        			<p class="price"><%= @featured_product.display_price %>€</p>
+        		</div>
+        	</div>
+        </div>
+			</div><!-- end col -->
+		</div><!-- end row -->
+	</div>
+
+</div>

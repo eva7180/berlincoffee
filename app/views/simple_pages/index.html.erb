@@ -11,6 +11,7 @@
 </div>
 
 <div class="container" id="product-reel">
-	<%= image_tag("thebarn1.jpg", class: "img-fluid", width: "300px") %>
-	<p>The Barn Coffee Roasters<br>Christmas Coffee</p>
+	<%= image_tag(@featured_product.image_url, class: "image-fluid", width: "300px") %>
+	<p><strong><%= link_to @featured_product.name.upcase, @featured_product %></strong></p>
+	<p><%= @featured_product.variety %></p>
 </div>
