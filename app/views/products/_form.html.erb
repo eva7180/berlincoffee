@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.number_field :price, step: :any, :value => (number_with_precision(form.object.price, :precision => 2) || 0) %>€
+    <%= form.number_field :price, step: :any %>€
   </div>
 
   <div class="field">

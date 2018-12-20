@@ -17,7 +17,7 @@
 							<p class="qty"><%= @product.quantity %>g</p>
 						</div>
 						<div class="col">
-        			<p class="price"><%= number_with_precision(@product.price, :precision => 2) %>€</p>
+        			<p class="price"><%= @product.display_price %>€</p>
         		</div>
         	</div>
         </div>
