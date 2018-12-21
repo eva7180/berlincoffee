@@ -9,7 +9,4 @@ class SimplePagesController < ApplicationController
   def contact
   end
 
-  def landing_page
-  	@featured_product = Product.last
-  end
 end

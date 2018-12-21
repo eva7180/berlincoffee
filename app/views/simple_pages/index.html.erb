@@ -19,27 +19,15 @@
 	    <li data-target="#featured-products-reel" data-slide-to="2"></li>
 	  </ol>
 	  <div class="carousel-inner">
-	    <div class="carousel-item active">
-	    	<%= image_tag(@featured_products[0].image_url, class: "d-block w-100") %>
+	  	<% @featured_products.each do |product| %>
+	    <div class="carousel-item<%= " active" if product == @featured_products.first %>">
+	    	<%= image_tag(product.image_url, class: "d-block w-100") %>
 	    	<div class="carousel-caption d-none d-md-block">
-	  		  <p><strong><%= @featured_products[0].name.upcase %></strong></p>
-					<p><%= @featured_products[0].variety %></p>
+	  		  <p><strong><%= product.name.upcase %></strong></p>
+					<p><%= product.variety %></p>
 	  		</div>
 	    </div>
-	    <div class="carousel-item">
-	      <%= image_tag(@featured_products[1].image_url, class: "d-block w-100") %>
-	      <div class="carousel-caption d-none d-md-block">
-	  		  <p><strong><%= @featured_products[1].name.upcase %></strong></p>
-					<p><%= @featured_products[1].variety %></p>
-	  		</div>
-	    </div>
-	    <div class="carousel-item">
-	      <%= image_tag(@featured_products[2].image_url, class: "d-block w-100") %>
-	      <div class="carousel-caption d-none d-md-block">
-	  		  <p><strong><%= @featured_products[2].name.upcase %></strong></p>
-					<p><%= @featured_products[2].variety %></p>
-	  		</div>
-	    </div>
+	    <% end %>
 	  </div>
 	  <a class="carousel-control-prev" href="#featured-products-reel" role="button" data-slide="prev">
 	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
