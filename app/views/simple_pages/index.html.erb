@@ -10,8 +10,44 @@
 	</div>
 </div>
 
-<div class="container" id="product-reel">
-	<%= image_tag(@featured_product.image_url, class: "image-fluid", width: "300px") %>
-	<p><strong><%= link_to @featured_product.name.upcase, @featured_product %></strong></p>
-	<p><%= @featured_product.variety %></p>
-</div>
+<section class="featured-products">
+	<h2>Featured Products:</h2>
+	<div id="featured-products-reel" class="carousel slide" data-ride="carousel">
+	  <ol class="carousel-indicators">
+	    <li data-target="#featured-products-reel" data-slide-to="0" class="active"></li>
+	    <li data-target="#featured-products-reel" data-slide-to="1"></li>
+	    <li data-target="#featured-products-reel" data-slide-to="2"></li>
+	  </ol>
+	  <div class="carousel-inner">
+	    <div class="carousel-item active">
+	    	<%= image_tag(@featured_products[0].image_url, class: "d-block w-100") %>
+	    	<div class="carousel-caption d-none d-md-block">
+	  		  <p><strong><%= @featured_products[0].name.upcase %></strong></p>
+					<p><%= @featured_products[0].variety %></p>
+	  		</div>
+	    </div>
+	    <div class="carousel-item">
+	      <%= image_tag(@featured_products[1].image_url, class: "d-block w-100") %>
+	      <div class="carousel-caption d-none d-md-block">
+	  		  <p><strong><%= @featured_products[1].name.upcase %></strong></p>
+					<p><%= @featured_products[1].variety %></p>
+	  		</div>
+	    </div>
+	    <div class="carousel-item">
+	      <%= image_tag(@featured_products[2].image_url, class: "d-block w-100") %>
+	      <div class="carousel-caption d-none d-md-block">
+	  		  <p><strong><%= @featured_products[2].name.upcase %></strong></p>
+					<p><%= @featured_products[2].variety %></p>
+	  		</div>
+	    </div>
+	  </div>
+	  <a class="carousel-control-prev" href="#featured-products-reel" role="button" data-slide="prev">
+	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#featured-products-reel" role="button" data-slide="next">
+	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+</section>
