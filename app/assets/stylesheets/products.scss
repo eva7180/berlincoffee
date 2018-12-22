@@ -32,3 +32,14 @@ p.v-line::after {
 .price {
 	text-align: right;
 }
+
+.submit-btn {
+	color: #8A3324;
+	border-color: #8A3324;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+}

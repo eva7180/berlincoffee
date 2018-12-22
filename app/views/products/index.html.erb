@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" id="products">
   <p id="notice"><%= notice %></p>
-  
+
   <h1>Products</h1>
 
   <div class="container-fluid">
@@ -11,5 +11,6 @@
   
   <br>
   
-  <%= link_to 'New Product', new_product_path %>
+  <%= button_to 'New Product', new_product_path, method: :get, class: "submit-btn" %>
+
 </div>

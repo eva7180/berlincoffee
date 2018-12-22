@@ -24,9 +24,63 @@ body {
 	font-size: 14px;
 }
 
+.container {
+	padding: 3% 0;
+}
+
 /* Typography */
 h1,
 h2 {
 	font-family: 'Open Sans', sans-serif;
+	padding-bottom: 20px;
 }
 
+/* Navbar */
+.navbar-dark {
+	background-color: #8A3324;
+}
+
+.navbar li {
+	padding: 0 10px;
+}
+
+/* Footer always flush at bottom */
+.main {
+	background-color: #FDBEB4;
+	min-height: calc(100vh - 216px); //nav is 66px and footer is 150px
+}
+
+footer {
+	background-color: #8A3324;
+	text-align: center;
+	height: 150px;
+	position: relative;
+}
+
+.social-buttons {
+	list-style-type: none;
+	margin: 0;
+  padding: 0;
+}
+
+footer li {
+	display: inline-block;
+	font-size: 2em;
+	padding: 20px 20px 0;
+}
+
+i {
+	color: #FDBEB4;
+}
+
+.copy {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+}
+
+.copy p {
+	position: relative;
+	left: -50%;
+	color: #FDBEB4;
+}
