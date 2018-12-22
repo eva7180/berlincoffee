@@ -1,1 +1,39 @@
-<h1>orders show</h1>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  
+  <h1>Order Details:</h1>
+
+  <div class="container-fluid">
+    <div class="row">
+    	<div class="col-3">
+      	<strong>Order ID</strong>
+      </div>
+      <div class="col-3">
+      	<strong>Product Name</strong>
+      </div>
+      <div class="col-3">
+      	<strong>Product Price</strong>
+      </div>
+      <div class="col-3">
+      	<strong>Total Price</strong>
+      </div>
+    </div>
+    <div class="row">
+    	<div class="col-3">
+      	<%= @order.id %>
+      </div>
+      <div class="col-3">
+      	<%= @order.product.name %>
+      </div>
+      <div class="col-3">
+      	<%= @order.product.display_price %>€
+      </div>
+      <div class="col-3">
+      	<%= '%.2f' % (@order.product.price * @order.total) %>€
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  

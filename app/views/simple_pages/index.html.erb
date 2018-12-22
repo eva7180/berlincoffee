@@ -15,7 +15,7 @@
 	<div id="featured-products-reel" class="carousel slide" data-ride="carousel">
 	  <ol class="carousel-indicators">
 	    <% @number_of_featured_products.times do |i| %>
-				<li data-target="#featured-products-reel" data-slide-to="<%= i %>"></li>
+				<li data-target="#featured-products-reel" data-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>"></li>
 			<% end %>
 	  </ol>
 	  <div class="carousel-inner">
