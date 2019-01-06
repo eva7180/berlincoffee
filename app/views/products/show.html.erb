@@ -28,5 +28,11 @@
 			</div><!-- end col -->
 		</div><!-- end row -->
 	</div>
+	
+	<p class="next-button">
+		<% if @product.id <= @products.length %>
+			<%= link_to '>> Next', @next_product %>
+		<% end %>
+	</p>
 
 </div>
