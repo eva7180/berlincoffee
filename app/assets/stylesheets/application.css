@@ -44,6 +44,17 @@ h2 {
 	padding: 0 10px;
 }
 
+.btn-outline-light {
+	color: #FDBEB4;
+	border-color: #FDBEB4;
+}
+
+.btn-outline-light:hover {
+		color: #8A3324;
+		border-color: #8A3324;
+		background-color: #FDBEB4;
+}
+
 /* Footer always flush at bottom */
 .main {
 	background-color: #FDBEB4;

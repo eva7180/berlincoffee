@@ -33,6 +33,11 @@
             <li class="nav-item"><%= link_to "Products", products_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Orders", orders_path, class: "nav-link" %></li>
           </ul>
+              <%= form_with(url: products_path, method: 'get', local: true, class: "form-inline my-2 my-lg-0") do |f| %>
+                <%= f.label :q, "Search for:" %>
+                <%= f.text_field :q, id: "q", value: params[:q], class: "form-control mr-sm-2" %>
+                <%= f.submit "Search", class: "btn btn-outline-light my-2 my-sm-0"%>
+              <% end %>
         </div>
       </nav>
     <div class="main">

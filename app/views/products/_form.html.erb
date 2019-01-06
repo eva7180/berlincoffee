@@ -11,37 +11,49 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.text_field :name, placeholder: :name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="form-group">
+    <%= form.text_area :description, placeholder: :description, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :variety %>
-    <%= form.text_field :variety %>
+  <div class="form-row">
+    <div class="col col-md-6">
+      <div class="form-group">
+        <%= form.text_field :variety, placeholder: :variety, class: "form-control form-control-sm" %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-row">
+    <div class="col col-md-3">
+      <%= form.label :quantity %>
+      <div class="input-group mb-3">
+        <%= form.number_field :quantity, placeholder: '0', class: "form-control" %>
+        <div class="input-group-append">
+          <span class="input-group-text">g</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col col-md-3">
+      <%= form.label :price %>
+      <div class="input-group mb-3">
+        <%= form.number_field :price, step: :any, placeholder: '0', class: "form-control" %>
+        <div class="input-group-append">
+          <span class="input-group-text">€</span>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>g
+  <div class="form-group">
+    <%= form.text_area :image_url, placeholder: "http://domain.com/myimage.jpg", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, step: :any %>€
-  </div>
-
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
-  </div>
-
-  <div class="actions">
+  <div>
     <%= form.submit class: "submit-btn" %>
   </div>
 <% end %>
