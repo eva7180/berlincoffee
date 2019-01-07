@@ -1,28 +1,26 @@
-<div class="container" id="contact">	
-	
-	<h1>Get in touch!</h1>
-	<p> We value your feedback and are always happy to hear about excellent coffee that we haven't discovered yet ourselves.</p>
-	<p>Send us a message or contact us through social media!</p>
 
-	<%= flash[:notice] %>
+<h1>Get in touch!</h1>
+<p> We value your feedback and are always happy to hear about excellent coffee that we haven't discovered yet ourselves.</p>
+<p>Send us a message or contact us through social media!</p>
 
-	<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |f| %>
-		<div class="form-group">
-			<%= f.label :name %>
-			<%= f.text_field :name, class: "form-control", placeholder: "Your Name" %>
-		</div>
+<%= flash[:notice] %>
 
-		<div class="form-group">
-			<%= f.label :email %>
-			<%= f.email_field :email, class: "form-control", placeholder: "name@example.com" %>
-		</div>
+<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |f| %>
+	<div class="form-group">
+		<%= f.label :name %>
+		<%= f.text_field :name, class: "form-control", placeholder: "Your Name" %>
+	</div>
 
-		<div class="form-group">
-			<%= f.label :message %>
-			<%= f.text_area :message, class: "form-control", placeholder: "Your message", rows: 5 %>
-		</div>
+	<div class="form-group">
+		<%= f.label :email %>
+		<%= f.email_field :email, class: "form-control", placeholder: "name@example.com" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :message %>
+		<%= f.text_area :message, class: "form-control", placeholder: "Your message", rows: 5 %>
+	</div>
 
 	<%= f.submit "Send", class: "form-label" %>
 
-	<% end %>
-</div>
+<% end %>

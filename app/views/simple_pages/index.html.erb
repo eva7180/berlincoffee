@@ -1,14 +1,16 @@
-<div class="container-fluid" id="hero-header">
-	<div class="row">
-		<div class="col-md-4" id="hero-msg">
-			<%= image_tag("logo_lg.png", class: "img-fluid", width: "80%") %>
-			<p>Your source for great coffee from Berlin.</p>
-		</div>
-		<div class="col-md-8" id="hero-img">
-			<%= image_tag("lovecoffee.jpg", class: "img-fluid") %>
+<% content_for :hero do %>
+	<div class="container-fluid" id="hero-header">
+		<div class="row">
+			<div class="col-md-4" id="hero-msg">
+				<%= image_tag("logo_lg.png", class: "img-fluid", width: "80%") %>
+				<p>Your source for great coffee from Berlin.</p>
+			</div>
+			<div class="col-md-8" id="hero-img">
+				<%= image_tag("lovecoffee.jpg", class: "img-fluid") %>
+			</div>
 		</div>
 	</div>
-</div>
+<% end %>
 
 <section class="featured-products">
 	<h2>Featured Products:</h2>

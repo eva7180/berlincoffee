@@ -33,15 +33,27 @@
             <li class="nav-item"><%= link_to "Products", products_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Orders", orders_path, class: "nav-link" %></li>
           </ul>
-              <%= form_with(url: products_path, method: 'get', local: true, class: "form-inline my-2 my-lg-0") do |f| %>
-                <%= f.label :q, "Search for:" %>
-                <%= f.text_field :q, id: "q", value: params[:q], class: "form-control mr-sm-2" %>
-                <%= f.submit "Search", class: "btn btn-outline-light my-2 my-sm-0"%>
-              <% end %>
+          <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+            <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+            <% else %>
+            <li class="nav-item"><%= link_to 'Login', new_user_session_path, class: "nav-link" %></li>
+            <% end %>
+          </ul>
+          <%= form_with(url: products_path, method: 'get', local: true, class: "form-inline my-2 my-lg-0") do |f| %>
+            <%= f.label :q, "Search for:" %>
+            <%= f.text_field :q, id: "q", value: params[:q], class: "form-control mr-sm-2" %>
+            <%= f.submit "Search", class: "btn btn-outline-light my-2 my-sm-0"%>
+          <% end %>
         </div>
       </nav>
     <div class="main">
-      <%= yield %>
+      <%= yield :hero %>
+      <div class="container">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
     </div><!-- end main -->
     <footer class="container-fluid">
       <ul class="social-buttons">

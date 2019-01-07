@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-1 col-md-3"></div>
+  <div class="col-10 col-md-6">
+    <h2>Please Sign Up</h2>
+  </div>
+</div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+<div class="row">
+  <div class="col-1 col-md-3"></div>
+  <div class="col-10 col-md-6">
+    <div class="form-group">
+      <%= f.label :email, class: "sr-only" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control" %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-1 col-md-3"></div>
+  <div class="col-10 col-md-6">
+    <div class="form-group">
+      <%= f.label :password, class: "sr-only" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password", class: "form-control" %>
+      <% if @minimum_password_length %>
+      <p class="help-block"><%= @minimum_password_length %> characters minimum</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-1 col-md-3"></div>
+  <div class="col-10 col-md-6">
+    <div class="form-group">
+      <%= f.label :password_confirmation, class: "sr-only" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: "form-control" %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-1 col-md-3"></div>
+  <div class="col-10 col-md-6">
+    <div class="actions">
+      <%= f.submit "Sign Up", class: "submit-btn" %>
+    </div>
+  </div>
+</div>
+<% end %>
+<div class="row">
+  <div class="col-1 col-md-3"></div>
+  <div class="col-10 col-md-6">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
