@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout'}
-  resources :users
+  get 'users', to: "users#index"
+  get 'users/:id', to: "users#show", as: "user"
   resources :products
   resources :orders, only: [:index, :show, :create, :destroy]
   
