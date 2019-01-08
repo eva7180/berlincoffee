@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @total = @order.quantity * @order.product.price
   end
 
   def destroy
