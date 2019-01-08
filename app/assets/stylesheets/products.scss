@@ -3,24 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .product-img img {
-	width: 100%;
+  width: 100%;
 }
 
 .product-info {
-	background-color: #FDBEB4;
-	padding: 5% 5% 1% 5%;
+  background-color: #FDBEB4;
+  padding: 5% 5% 1% 5%;
 }
 
 .product-buttons p {
-	float: right;
-	padding-right: 2%;
-	margin-top: 2%;
+  float: right;
+  padding-right: 2%;
+  margin-top: 2%;
   margin-bottom: 8%;
 
 }
 
 p.v-line::after {
-	content: "";
+  content: "";
   position: absolute;
   width: 0.1em;
   height: 1em;
@@ -30,19 +30,19 @@ p.v-line::after {
 }
 
 .price {
-	text-align: right;
+  text-align: right;
 }
 
 .submit-btn {
-	color: #8A3324;
-	border-color: #8A3324;
-	cursor: pointer;
+  color: #8A3324;
+  border-color: #8A3324;
+  cursor: pointer;
 
-	&:hover {
-		text-decoration: underline;
-	}
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .next-button {
-	float: right;
+  float: right;
 }

@@ -1,44 +1,44 @@
 <% content_for :hero do %>
-	<div class="container-fluid" id="hero-header">
-		<div class="row">
-			<div class="col-md-4" id="hero-msg">
-				<%= image_tag("logo_lg.png", class: "img-fluid", width: "80%") %>
-				<p>Your source for great coffee from Berlin.</p>
-			</div>
-			<div class="col-md-8" id="hero-img">
-				<%= image_tag("lovecoffee.jpg", class: "img-fluid") %>
-			</div>
-		</div>
-	</div>
+  <div class="container-fluid" id="hero-header">
+    <div class="row">
+      <div class="col-md-4" id="hero-msg">
+        <%= image_tag("logo_lg.png", class: "img-fluid", width: "80%") %>
+        <p>Your source for great coffee from Berlin.</p>
+      </div>
+      <div class="col-md-8" id="hero-img">
+        <%= image_tag("lovecoffee.jpg", class: "img-fluid") %>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <section class="featured-products">
-	<h2>Featured Products:</h2>
-	<div id="featured-products-reel" class="carousel slide" data-ride="carousel">
-	  <ol class="carousel-indicators">
-	    <% @number_of_featured_products.times do |i| %>
-				<li data-target="#featured-products-reel" data-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>">
-				</li>
-			<% end %>
-	  </ol>
-	  <div class="carousel-inner">
-	  	<% @featured_products.each do |product| %>
-	    <div class="carousel-item<%= " active" if product == @featured_products.first %>">
-	    	<%= image_tag(product.image_url, class: "d-block w-100") %>
-	    	<div class="carousel-caption d-none d-md-block">
-	  		  <p><strong><%= product.name.upcase %></strong></p>
-					<p><%= product.variety %></p>
-	  		</div>
-	    </div>
-	    <% end %>
-	  </div>
-	  <a class="carousel-control-prev" href="#featured-products-reel" role="button" data-slide="prev">
-	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	    <span class="sr-only">Previous</span>
-	  </a>
-	  <a class="carousel-control-next" href="#featured-products-reel" role="button" data-slide="next">
-	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    <span class="sr-only">Next</span>
-	  </a>
-	</div>
+  <h2>Featured Products:</h2>
+  <div id="featured-products-reel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <% @number_of_featured_products.times do |i| %>
+        <li data-target="#featured-products-reel" data-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>">
+        </li>
+      <% end %>
+    </ol>
+    <div class="carousel-inner">
+      <% @featured_products.each do |product| %>
+      <div class="carousel-item<%= " active" if product == @featured_products.first %>">
+        <%= image_tag(product.image_url, class: "d-block w-100") %>
+        <div class="carousel-caption d-none d-md-block">
+          <p><strong><%= product.name.upcase %></strong></p>
+          <p><%= product.variety %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#featured-products-reel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#featured-products-reel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </section>

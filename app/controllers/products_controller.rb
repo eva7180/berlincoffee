@@ -16,9 +16,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @products = Product.all
-    if @product.id <= @products.length
-      @next_product = Product.find(@product.id + 1)
-    end
+    @next_product = @products[(@products.index(@product)+1)]
   end
 
   # GET /products/new

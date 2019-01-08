@@ -17,81 +17,81 @@
 * { box-sizing: border-box; }
 
 body {
-	color: #8A3324;
-	height: 100%;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 14px;
+  color: #8A3324;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .container {
-	padding: 3% 0;
+  padding: 3% 0;
 }
 
 /* Typography */
 h1,
 h2 {
-	font-family: 'Open Sans', sans-serif;
-	padding-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  padding-bottom: 20px;
 }
 
 /* Navbar */
 .navbar-dark {
-	background-color: #8A3324;
+  background-color: #8A3324;
 }
 
 .navbar li {
-	padding: 0 10px;
+  padding: 0 10px;
 }
 
 .btn-outline-light {
-	color: #FDBEB4;
-	border-color: #FDBEB4;
+  color: #FDBEB4;
+  border-color: #FDBEB4;
 }
 
 .btn-outline-light:hover {
-		color: #8A3324;
-		border-color: #8A3324;
-		background-color: #FDBEB4;
+    color: #8A3324;
+    border-color: #8A3324;
+    background-color: #FDBEB4;
 }
 
 /* Footer always flush at bottom */
 .main {
-	background-color: #FDBEB4;
-	min-height: calc(100vh - 216px); //nav is 66px and footer is 150px
+  background-color: #FDBEB4;
+  min-height: calc(100vh - 216px); //nav is 66px and footer is 150px
 }
 
 footer {
-	background-color: #8A3324;
-	text-align: center;
-	height: 150px;
-	position: relative;
+  background-color: #8A3324;
+  text-align: center;
+  height: 150px;
+  position: relative;
 }
 
 .social-buttons {
-	list-style-type: none;
-	margin: 0;
+  list-style-type: none;
+  margin: 0;
   padding: 0;
 }
 
 footer li {
-	display: inline-block;
-	font-size: 2em;
-	padding: 20px 20px 0;
+  display: inline-block;
+  font-size: 2em;
+  padding: 20px 20px 0;
 }
 
 i {
-	color: #FDBEB4;
+  color: #FDBEB4;
 }
 
 .copy {
-	position: absolute;
-	bottom: 0;
-	left: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
 }
 
 .copy p {
-	position: relative;
-	left: -50%;
-	color: #FDBEB4;
+  position: relative;
+  left: -50%;
+  color: #FDBEB4;
 }

@@ -4,52 +4,52 @@
 
 /* hero header */
 #hero-msg {
-	background-color: #FFF;
-	text-align: center;
-	padding-top: 15px;
+  background-color: #FFF;
+  text-align: center;
+  padding-top: 15px;
 }
 
 #hero-img {
-	padding: 0;
+  padding: 0;
 }
 
 /* Featured products */
 .featured-products {
-	padding-top: 5%;
-	padding-bottom: 5%;
-	text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
 }
 
 .carousel-inner {
-	width: 300px;
-	margin: 0 auto;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .carousel-item img {
-	padding-top: 20px;
-	padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .carousel-caption {
-	color: #8A3324;
-	position: relative;
-	right: auto;
-	left: auto;
+  color: #8A3324;
+  position: relative;
+  right: auto;
+  left: auto;
 }
 
 .carousel-indicators {
-	bottom: 0;
+  bottom: 0;
 }
 
 .carousel-indicators .active {
-	background-color: rgba(255,255,255,.5);
+  background-color: rgba(255,255,255,.5);
 }
 
 .carousel-indicators li {
-	height: 30px;
-	background-image: url("logo_sm_dark.png");
-	background-position: center;
-	background-size: cover;
-	background-color: #FDBEB4;
+  height: 30px;
+  background-image: url("logo_sm_dark.png");
+  background-position: center;
+  background-size: cover;
+  background-color: #FDBEB4;
 }
 

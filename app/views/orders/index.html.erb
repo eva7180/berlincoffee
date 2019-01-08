@@ -3,15 +3,15 @@
   <div class="container-fluid">
     <div class="row">
       <% @orders.each do |order| %>
-      	<div class="col-sm">
-      		<h2>
-      			Order # <%= order.id %>:
-      			<%= link_to order.product.name, order %>
-      		</h2>
-      		<p><%= order.product.description %></p>
-      		<p><%= order.product.variety %></p>
-      		<p><%= order.product.display_price %>€</p>
-      	</div><!-- end col -->
+        <div class="col-sm">
+          <h2>
+            Order # <%= order.id %>:
+            <%= link_to order.product.name, order %>
+          </h2>
+          <p><%= order.product.description %></p>
+          <p><%= order.product.variety %></p>
+          <p><%= order.product.display_price %>€</p>
+        </div><!-- end col -->
       <% end %>
     </div><!-- end row -->
   </div>
