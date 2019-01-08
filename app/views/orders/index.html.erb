@@ -1,17 +1,43 @@
-  <h1>Orders</h1>
+  <h1>All Orders</h1>
 
   <div class="container-fluid">
     <div class="row">
-      <% @orders.each do |order| %>
-        <div class="col-sm">
-          <h2>
-            Order # <%= order.id %>:
-            <%= link_to order.product.name, order %>
-          </h2>
-          <p><%= order.product.description %></p>
-          <p><%= order.product.variety %></p>
-          <p><%= order.product.display_price %>€</p>
-        </div><!-- end col -->
-      <% end %>
-    </div><!-- end row -->
+      <div class="col-2">
+        <strong>Order ID</strong>
+      </div>
+      <div class="col-3">
+        <strong>Product Name</strong>
+      </div>
+      <div class="col-2">
+        <strong>Order Qty</strong>
+      </div>
+      <div class="col-2">
+        <strong>Item Price</strong>
+      </div>
+      <div class="col-2">
+        <strong>Total Price</strong>
+      </div>
+    </div>
+    <div class="row">
+    <% @orders.each do |order| %>
+      <div class="col-2">
+        <%= order.id %>
+      </div>
+      <div class="col-3">
+        <%= order.product.name %>
+      </div>
+      <div class="col-2">
+        <%= order.quantity %>
+      </div>
+      <div class="col-2">
+        <%= order.product.display_price %>€
+      </div>
+      <div class="col-2">
+        <%= '%.2f' % (order.quantity * order.product.price) %>€
+      </div>
+      <div class="col-1">
+        <%= link_to 'Show', order_path(order) %>
+      </div>
+    <% end %>
+    </div>
   </div>
