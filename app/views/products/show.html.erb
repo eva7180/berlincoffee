@@ -54,37 +54,10 @@
     </div><!-- end 3rd col -->
   </div> <!-- end outer row -->
     <div class="product-comments">
-      <div class="card">
-        <div class="card-body">
-          <p class="stars">
-            <i class="far fa-star star"></i>
-            <i class="fas fa-star-half-alt star"></i>
-            <i class="fas fa-star star"></i>
-            <i class="fas fa-star star"></i>
-            <i class="fas fa-star star"></i>
-          </p>
-          <p class="card-text text-justify">
-            This is a comment this is a comment this is a comment this is a comment this is a comment this is a comment this is a comment.
-          </p>
-        </div>
-        <div class="card-footer text-md-right">user details / date</div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <p class="stars">
-            <i class="far fa-star star"></i>
-            <i class="far fa-star star"></i>
-            <i class="far fa-star star"></i>
-            <i class="fas fa-star-half-alt star"></i>
-            <i class="fas fa-star star"></i>
-          </p>
-          <p class="card-text text-justify">
-            This is another comment
-          </p>
-        </div>
-        <div class="card-footer text-md-right">user details / date</div>
-      </div>
+      <%= render "comments" %>
     </div>
+
+    <%= render "new_comment" %>
 </div> <!-- end container -->
 
 
