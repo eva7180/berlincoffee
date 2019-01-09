@@ -17,6 +17,9 @@ class ProductsController < ApplicationController
   def show
     @products = Product.all
     @next_product = @products[(@products.index(@product)+1)]
+    @prev_product = @products[(@products.index(@product)-1)] # not in use yet, to do: add previous button to show page
+
+    @comments = @product.comments.order("created_at DESC")
   end
 
   # GET /products/new

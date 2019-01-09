@@ -1,0 +1,24 @@
+$(document).on('turbolinks:load', function () {
+	//fade out alerts and notices after they appear
+  $('.alert').delay(1600).slideUp(1200);
+  $('.notice').delay(1600).slideDown(1200);
+
+  //raty plugin for star rating
+  $('.rating').raty({
+  	starHalf: '<%= asset_path 'star-half.png' %>',
+  	starOff: '<%= asset_path 'star-off.png' %>',
+  	starOn: '<%= asset_path 'star-on.png' %>',
+  	scoreName: 'comment[rating]'
+  });
+
+  $('.rated').raty({
+    starHalf: '<%= asset_path 'star-half.png' %>',
+    starOff: '<%= asset_path 'star-off.png' %>',
+    starOn: '<%= asset_path 'star-on.png' %>',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+
+}); //end document ready
