@@ -1,13 +1,4 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <div class="product-buttons">
-        <p><%= link_to 'Back', products_path %></p>
-        <p class="v-line"><%= link_to 'Edit', edit_product_path(@product) %></p>
-      </div>
-    </div>
-  </div>
-
   <div class="row"> <!-- outer row -->
     <div class="col-11 col-md-4"> <!-- 1st col -->
         <div class="product-img">
@@ -54,10 +45,10 @@
     </div><!-- end 3rd col -->
   </div> <!-- end outer row -->
     <div class="product-comments">
+      <%= render "new_comment" %>
       <%= render "comments" %>
     </div>
 
-    <%= render "new_comment" %>
 </div> <!-- end container -->
 
 
