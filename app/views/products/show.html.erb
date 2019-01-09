@@ -1,33 +1,92 @@
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12 col-md-3 col-lg-3"></div>
-      <div class="col-sm-12 col-md-6 col-lg-6">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="product-buttons">
+        <p><%= link_to 'Back', products_path %></p>
+        <p class="v-line"><%= link_to 'Edit', edit_product_path(@product) %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row"> <!-- outer row -->
+    <div class="col-11 col-md-4"> <!-- 1st col -->
         <div class="product-img">
           <%= image_tag(@product.image_url, class: "image-fluid") %>
         </div>
-        <div class="product-info">
-          <p><strong><%= @product.name.upcase %></strong></p>
-          <p><%= @product.description %></p>
-          <p><%= @product.variety %></p>
-          <div class="row">
-            <div class="col">
-              <p class="qty"><%= @product.size %>g</p>
-            </div>
-            <div class="col">
-              <p class="price"><%= @product.display_price %>€</p>
-            </div>
+    </div> <!-- end 1st col -->
+    <div class="col-11 col-md-7"> <!-- 2nd col -->
+      <div class="product-info-show">
+        <div class="row"> <!-- inner row 1 -->
+          <div class="col-8">
+            <p><strong><%= @product.name.upcase %></strong></p>
           </div>
+          <div class="col-4">
+            <i class="far fa-star star"></i>
+            <i class="fas fa-star-half-alt star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+          </div>
+        </div> <!-- end inner row 1 -->
+        <div class="row"> <!-- inner row 2 -->
+          <div class="col">
+            <p><%= @product.description %></p>
+            <p><strong>Variety: </strong><%= @product.variety %></p>
+          </div>
+        </div><!-- end inner row 2 -->
+        <div class="row"><!-- inner row 3 -->
+          <div class="col">
+            <p><strong>Package size:</strong></p>
+            <p class="qty"><%= @product.size %>g</p>
+          </div>
+          <div class="col">
+            <p class="price"><%= @product.display_price %>€</p>
+          </div>
+        </div> <!-- end inner row 3 -->
+      </div>
+    </div> <!-- end 2nd col -->
+    <div class="col-1 align-self-center"><!-- 3rd col -->
+      <p class="next-button">
+        <% if @products.index(@product) < (@products.length - 1) %>
+          <%= link_to '>> Next', @next_product %>
+        <% end %>
+      </p>
+    </div><!-- end 3rd col -->
+  </div> <!-- end outer row -->
+    <div class="product-comments">
+      <div class="card">
+        <div class="card-body">
+          <p class="stars">
+            <i class="far fa-star star"></i>
+            <i class="fas fa-star-half-alt star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+          </p>
+          <p class="card-text text-justify">
+            This is a comment this is a comment this is a comment this is a comment this is a comment this is a comment this is a comment.
+          </p>
         </div>
-        <div class="product-buttons">
-          <p><%= link_to 'Back', products_path %></p>
-          <p class="v-line"><%= link_to 'Edit', edit_product_path(@product) %></p>
+        <div class="card-footer text-md-right">user details / date</div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <p class="stars">
+            <i class="far fa-star star"></i>
+            <i class="far fa-star star"></i>
+            <i class="far fa-star star"></i>
+            <i class="fas fa-star-half-alt star"></i>
+            <i class="fas fa-star star"></i>
+          </p>
+          <p class="card-text text-justify">
+            This is another comment
+          </p>
         </div>
-      </div><!-- end col -->
-    </div><!-- end row -->
-  </div>
+        <div class="card-footer text-md-right">user details / date</div>
+      </div>
+    </div>
+</div> <!-- end container -->
+
+
   
-  <p class="next-button">
-    <% if @products.index(@product) < (@products.length - 1) %>
-      <%= link_to '>> Next', @next_product %>
-    <% end %>
-  </p>
+  

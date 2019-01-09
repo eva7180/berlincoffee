@@ -6,17 +6,29 @@
   width: 100%;
 }
 
-.product-info {
-  background-color: #FDBEB4;
+.product-info,
+.product-info-show {
   padding: 5% 5% 1% 5%;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-info-show {
+    padding: 0% 5% 0% 5%;
+  }
+}
+
+i.star {
+  color: #8A3324;
+  float: right;
+}
+
+.stars {
+  padding-right: 0;
 }
 
 .product-buttons p {
   float: right;
   padding-right: 2%;
-  margin-top: 2%;
-  margin-bottom: 8%;
-
 }
 
 p.v-line::after {
@@ -46,3 +58,9 @@ p.v-line::after {
 .next-button {
   float: right;
 }
+
+.product-comments {
+  padding: 3% 5% 1% 5%;
+  width: 100%;
+}
+
