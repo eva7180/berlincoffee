@@ -1,10 +1,10 @@
 <% if signed_in? %>
+	<%= form_for([@product, @product.comments.build]) do |f| %>
 	<div class="card">
 		<div class="card-header">
 			<h6>Leave a review:</h6>
 		</div>
 	  <div class="card-body">
-		<%= form_for([@product, @product.comments.build]) do |f| %>
 			<div class="form-group">
 				<%= f.text_area :body, placeholder: "Your comment", class: "form-control" %>
 			</div>
@@ -16,7 +16,7 @@
 				<%= f.submit "Submit" %>
 			</div>
 		</div>
-		<% end %>
 	</div>
+	<% end %>
 <% end %>
 
