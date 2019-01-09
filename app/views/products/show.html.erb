@@ -8,15 +8,13 @@
     <div class="col-11 col-md-7"> <!-- 2nd col -->
       <div class="product-info-show">
         <div class="row"> <!-- inner row 1 -->
-          <div class="col-8">
+          <div class="col-7">
             <p><strong><%= @product.name.upcase %></strong></p>
           </div>
-          <div class="col-4">
-            <i class="far fa-star star"></i>
-            <i class="fas fa-star-half-alt star"></i>
-            <i class="fas fa-star star"></i>
-            <i class="fas fa-star star"></i>
-            <i class="fas fa-star star"></i>
+          <div class="col-5">
+            <% if @product.comments != [] %>
+              <p class="stars rated" data-score="<%= @product.average_rating %>"></p>
+            <% end %>
           </div>
         </div> <!-- end inner row 1 -->
         <div class="row"> <!-- inner row 2 -->

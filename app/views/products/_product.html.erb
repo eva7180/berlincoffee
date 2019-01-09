@@ -4,15 +4,13 @@
   </div>
   <div class="product-info">
     <div class="row">
-      <div class="col-8">
+      <div class="col-7">
         <p><strong><%= product.name.upcase %></strong></p>
       </div>
-      <div class="col-4 stars">
-        <i class="far fa-star star"></i>
-        <i class="fas fa-star-half-alt star"></i>
-        <i class="fas fa-star star"></i>
-        <i class="fas fa-star star"></i>
-        <i class="fas fa-star star"></i>
+      <div class="col-5">
+        <% if product.comments != [] %>
+          <p class="stars rated" data-score="<%= product.average_rating %>"></p>
+        <% end %>
       </div>
     </div>
     <p><%= product.description %></p>
