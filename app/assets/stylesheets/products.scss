@@ -6,17 +6,25 @@
   width: 100%;
 }
 
-.product-info {
-  background-color: #FDBEB4;
-  padding: 5% 5% 1% 5%;
+.product-info,
+.product-info-show {
+  padding: 5% 3% 1% 3%;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-info-show {
+    padding: 0% 5% 0% 5%;
+  }
+}
+
+.stars {
+  padding-right: 0;
+  float: right;
 }
 
 .product-buttons p {
   float: right;
   padding-right: 2%;
-  margin-top: 2%;
-  margin-bottom: 8%;
-
 }
 
 p.v-line::after {
@@ -46,3 +54,13 @@ p.v-line::after {
 .next-button {
   float: right;
 }
+
+.product-comments {
+  padding: 3% 5% 1% 5%;
+  width: 100%;
+}
+
+.card {
+  margin-bottom: 1%;
+}
+

@@ -1,9 +1,18 @@
 <div class="col-sm-12 col-md-6 col-lg-4">
   <div class="product-img">
-    <%= image_tag(product.image_url, class: "image-fluid") %>
+    <%= link_to (image_tag(product.image_url)), product, class: "image-fluid" %>
   </div>
   <div class="product-info">
-    <p><strong><%= product.name.upcase %></strong></p>
+    <div class="row">
+      <div class="col-7">
+        <p><strong><%= product.name.upcase %></strong></p>
+      </div>
+      <div class="col-5">
+        <% if product.comments != [] %>
+          <p class="stars rated" data-score="<%= product.average_rating %>"></p>
+        <% end %>
+      </div>
+    </div>
     <p><%= product.description %></p>
     <p><%= product.variety %></p>
     <div class="row">

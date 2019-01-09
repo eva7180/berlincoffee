@@ -1,0 +1,13 @@
+<% @comments.each do |comment| %>  
+  <div class="card">
+    <div class="card-header text-md-right">
+      <%= comment.user.first_name %>, <%= "#{time_ago_in_words(comment.created_at)} ago" %>
+    </div>
+    <div class="card-body">
+      <p class="stars rated" data-score="<%= comment.rating %>"></p>
+      <p class="card-text text-justify">
+        <%= comment.body %>
+      </p>
+    </div>
+  </div>
+<% end %>
