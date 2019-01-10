@@ -2,6 +2,9 @@
   <div class="card">
     <div class="card-header text-md-right">
       <%= comment.user.first_name %>, <%= "#{time_ago_in_words(comment.created_at)} ago" %>
+    <% if signed_in? && current_user.admin? %>
+      <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
     </div>
     <div class="card-body">
       <p class="stars rated" data-score="<%= comment.rating %>"></p>
@@ -11,6 +14,8 @@
     </div>
   </div>
 <% end %>
+
 <div class="pagination justify-content-end">
   <%= will_paginate @comments %>
 </div>
+
