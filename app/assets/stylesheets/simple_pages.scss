@@ -15,19 +15,13 @@
 
 /* Featured products */
 .featured-products {
-  padding-top: 5%;
   padding-bottom: 5%;
   text-align: center;
 }
 
 .carousel-inner {
-  width: 300px;
+  width: 70%;
   margin: 0 auto;
-}
-
-.carousel-item img {
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .carousel-caption {
@@ -37,9 +31,14 @@
   left: auto;
 }
 
-.carousel-indicators {
-  bottom: 0;
+.carousel-img {
+  width: 300px;
+  margin: auto;
 }
+
+.carousel-indicators {
+  position: relative;
+  }
 
 .carousel-indicators .active {
   background-color: rgba(255,255,255,.5);

@@ -2,9 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.product-img {
+  position: relative; // necessary to be able to position img within this div
+  width: 100%; // height is defined in JS (height = width)
+  overflow: hidden; // content will be cropped
+}
+
 .product-img img {
-  width: 100%;
-  padding-top: 5%;
+  position: absolute;
+  width: 100%; 
+  top: 50%; // top, left, transform trick to vertically and horizontally center image
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
+
+.product-img img.landscape {
+  height: 100%;
+  width: auto;
 }
 
 .product-info,
