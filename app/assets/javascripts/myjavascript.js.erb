@@ -25,11 +25,15 @@ $(document).on('turbolinks:load', function () {
   var h = $('.product-img').outerWidth();
   $('.product-img').css({height: h + 'px'});
 
+  console.log("Production test");
+
   // determine if img is portrait or landscape
   $('.product-img img').each(function() {
-      if ($(this).width() > $(this).height()) {
-        $(this).addClass('landscape');        
-      }
-    });
+    console.log("Function is working in Production");
+    if ($(this).width() > $(this).height()) {
+      $(this).addClass('landscape');        
+    }
+  });
 
 }); //end document ready
+
