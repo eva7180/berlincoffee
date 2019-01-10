@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     @next_product = @products[(@products.index(@product)+1)]
     @prev_product = @products[(@products.index(@product)-1)] # not in use yet, to do: add previous button to show page
 
-    @comments = @product.comments.order("created_at DESC")
+    @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 3)
   end
 
   # GET /products/new

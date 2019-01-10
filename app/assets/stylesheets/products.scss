@@ -79,6 +79,20 @@ p.v-line::after {
   margin-bottom: 1%;
 }
 
-.col-1 .row {
-  border: 1px solid red;
-}
+.pagination {
+  text-align: center;
+  padding: 1em; }
+  .pagination a, .pagination span {
+    padding: 0.2em 0.3em; }
+  .pagination .disabled {
+    display: none; }
+  .pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.4em; }
+  .pagination a {
+    text-decoration: none;
+    color: black; }
+    .pagination a:hover, .pagination a:focus {
+      text-decoration: underline; }
