@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :orders
   has_many :comments
+
+  after_create :welcome
+  def welcome
+  	UserMailer.welcome(self).deliver_now
+  end
 end
