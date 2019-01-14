@@ -44,6 +44,15 @@
             <p class="price"><%= @product.display_price %>€</p>
           </div>
         </div> <!-- end inner row 3 -->
+        <div class="row"> <!-- inner row 4 -->
+          <div class="col">
+            <%= form_for @order_item do |f| %>
+              <%= f.hidden_field :product_id, value: @product.id %>
+              <%= f.number_field :quantity %>
+              <%= f.submit "Add to Cart" %>
+            <% end %>
+          </div>
+        </div><!-- end inner row 4 -->
       </div>
     </div> <!-- end 3rd col -->
   </div> <!-- end outer row -->
