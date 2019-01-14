@@ -37,6 +37,9 @@
 	    <tr>
 	    	<td class="text-right" colspan="5"><strong><p>Cart Total: <%= number_to_currency current_cart.total_price %></p></strong></td>
 	    </tr>
+	    <tr>
+	    	<td class="text-right" colspan="5"><%= link_to "Empty Cart", cart_path, :data => {:confirm => "Do you really want to empty your cart?", :method => "delete" } %></td>
+	    </tr>
 	  </tbody>
 	</table>
 <% else %>
