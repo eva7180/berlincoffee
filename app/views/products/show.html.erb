@@ -37,13 +37,25 @@
         </div><!-- end inner row 2 -->
         <div class="row"><!-- inner row 3 -->
           <div class="col">
-            <p><strong>Package size:</strong></p>
-            <p class="qty"><%= @product.size %>g</p>
+            <p><strong>Package size: </strong><%= @product.size %>g</p>
           </div>
           <div class="col">
-            <p class="price"><%= @product.display_price %>€</p>
+            <p class="text-right"><%= @product.display_price %>€</p>
           </div>
         </div> <!-- end inner row 3 -->
+        <div class="row"> <!-- inner row 4 -->
+          <div class="col-6 offset-6">
+            <%= form_for @order_item do |f| %>
+            <div class="form-inline my-2 my-lg-0">
+              <div class="form-group">
+                <%= f.hidden_field :product_id, value: @product.id %>
+                <%= f.number_field :quantity, class: "form-control form-control-sm mr-sm-2" %>
+                <%= f.submit "Add to Cart", class: "btn btn-sm " %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div><!-- end inner row 4 -->
       </div>
     </div> <!-- end 3rd col -->
   </div> <!-- end outer row -->

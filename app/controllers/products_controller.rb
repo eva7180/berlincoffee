@@ -17,7 +17,9 @@ class ProductsController < ApplicationController
   def show
     @products = Product.all
     @next_product = @products[(@products.index(@product)+1)]
-    @prev_product = @products[(@products.index(@product)-1)] # not in use yet, to do: add previous button to show page
+    @prev_product = @products[(@products.index(@product)-1)]
+
+    @order_item = current_cart.order_items.new
 
     @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 3)
   end

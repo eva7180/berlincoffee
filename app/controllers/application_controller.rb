@@ -1,9 +1,20 @@
 class ApplicationController < ActionController::Base
-	before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  helper_method :current_cart
 
-	rescue_from CanCan::AccessDenied do |exception|
+  rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, alert: exception.message
   end
+
+  def current_cart
+    if session[:cart_id]
+      Cart.find(session[:cart_id])
+    else
+      Cart.new
+    end
+  end
+
+
 
   protected
 

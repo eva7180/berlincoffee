@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :products do
   	resources :comments
   end
-  resources :orders, only: [:index, :show, :create, :destroy]
+  resources :order_items
+  resource :cart, only: [:show, :destroy]
   
   get 'simple_pages/about', to: "simple_pages#about"
   get 'simple_pages/contact', to: "simple_pages#contact"
