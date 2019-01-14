@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_113725) do
+ActiveRecord::Schema.define(version: 2019_01_14_171739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+    t.string "status"
+    t.decimal "total_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -29,10 +36,10 @@ ActiveRecord::Schema.define(version: 2019_01_14_113725) do
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
     t.bigint "product_id"
-    t.bigint "order_id"
+    t.bigint "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["cart_id"], name: "index_order_items_on_cart_id"
     t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
@@ -71,6 +78,5 @@ ActiveRecord::Schema.define(version: 2019_01_14_113725) do
 
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
-  add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
 end

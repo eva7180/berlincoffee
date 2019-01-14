@@ -42,6 +42,10 @@
   padding-right: 2%;
 }
 
+a {
+  color: #8A3324;
+}
+
 p.v-line::after {
   content: "";
   position: absolute;
@@ -50,10 +54,6 @@ p.v-line::after {
   margin-left: 1%;
   margin-top: 1%;
   background: #8A3324;
-}
-
-.price {
-  text-align: right;
 }
 
 .submit-btn {
@@ -96,3 +96,11 @@ p.v-line::after {
     color: black; }
     .pagination a:hover, .pagination a:focus {
       text-decoration: underline; }
+
+.table td {
+  vertical-align: middle;
+}
+
+td i {
+  color: #8A3324;
+}
