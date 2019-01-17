@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Cart do
-	context "cart has items" do
+	context "when cart has items" do
 		let(:cart) {Cart.create!}
 		let(:product1) {Product.create!(name: "Good Coffee", price: 5)}
 		let(:product2) {Product.create!(name: "Bad Coffee", price: 1)}
