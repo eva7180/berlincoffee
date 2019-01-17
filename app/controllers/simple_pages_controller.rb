@@ -1,13 +1,6 @@
 class SimplePagesController < ApplicationController
   def index
-    @products = Product.all
-    @reviewed_products = []
-    @products.each do |product|
-      if product.comments.count > 0
-        @reviewed_products << product
-      end
-    end
-    @featured_products = @reviewed_products.last(3)
+    @featured_products = Product.joins(:comments).group('products.id').last(3) #fix this to show the 3 products with highest rating comments only
     @number_of_featured_products = @featured_products.length
   end
 
