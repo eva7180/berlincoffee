@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-body">
 		<h4>Thank you for your purchase, <%= @user.first_name %>!</h4>
-		<p> We have charged € <%= @cart.total_price %> to your card and sent a confirmation e-mail to <%= @user.email %>.</p>
+		<p> We have charged <%= number_to euro @cart.total_price %> to your card and sent a confirmation e-mail to <%= @user.email %>.</p>
 		<br>
 		<p> We hope you enjoy the coffee! </p>	
 	</div>
