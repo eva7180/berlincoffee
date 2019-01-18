@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   post 'simple_pages/thank_you'
 
   root 'simple_pages#index'
+
+  post 'payments', to: "payments#create"
 end

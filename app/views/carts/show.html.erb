@@ -47,7 +47,8 @@
 			<%= button_to "Continue Shopping", products_path, method: :get,  class: "submit-btn" %>
 		</div>
 		<div class="col-sm-6 text-right">
-			<%= form_with(url: '/payments/create') do |f| %>
+			<%= form_with(url: '/payments') do |f| %>
+				<%= f.hidden_field :cart_id, value: current_cart.id %>
   		  <%= render partial: "shared/stripe_checkout_button" %>
   		<% end %>
   	</div>
