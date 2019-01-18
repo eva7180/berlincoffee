@@ -42,7 +42,17 @@
 	    </tr>
 	  </tbody>
 	</table>
+	<div class="row">
+		<div class="col-sm-6">
+			<%= button_to "Continue Shopping", products_path, method: :get,  class: "submit-btn" %>
+		</div>
+		<div class="col-sm-6 text-right">
+			<%= form_with(url: '/payments/create') do |f| %>
+  		  <%= render partial: "shared/stripe_checkout_button" %>
+  		<% end %>
+  	</div>
+  </div>
 <% else %>
 	<p>Your shopping cart is empty.</p>
+	<%= button_to "Start Shopping", products_path, method: :get,  class: "submit-btn" %>
 <% end %>
-<%= button_to "Continue Shopping", products_path, method: :get,  class: "submit-btn" %>
