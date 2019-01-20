@@ -47,9 +47,13 @@
 			<%= button_to "Continue Shopping", products_path, method: :get,  class: "submit-btn" %>
 		</div>
 		<div class="col-sm-6 text-right">
-			<%= form_with(url: '/payments') do |f| %>
-				<%= f.hidden_field :cart_id, value: current_cart.id %>
-  		  <%= render partial: "shared/stripe_checkout_button" %>
+			<% if user_signed_in? %>
+				<%= form_with(url: '/payments') do |f| %>
+					<%= f.hidden_field :cart_id, value: current_cart.id %>
+  			  <%= render partial: "shared/stripe_checkout_button" %>
+  			<% end %>
+  		<% else %>
+  			<%= button_to 'Login to Checkout Cart', new_user_session_path, method: :get, class: "submit-btn" %>
   		<% end %>
   	</div>
   </div>

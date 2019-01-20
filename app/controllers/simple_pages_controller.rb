@@ -1,4 +1,5 @@
 class SimplePagesController < ApplicationController
+  
   def index
     @featured_products = Product.joins(:comments).group('products.id').last(3) #fix this to show the 3 products with highest rating comments only
     @number_of_featured_products = @featured_products.length

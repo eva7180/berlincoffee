@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :store_user_location!, if: :storable_location?
+
   helper_method :current_cart
   helper_method :number_to_euro
 
@@ -20,11 +22,27 @@ class ApplicationController < ActionController::Base
     view_context.number_to_currency(amount, unit: "€ ", separator: ",", delimiter: ".")
   end
 
+
   protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name])
   end
+  
+
+  private
+  #stay on same page after sign in instead of redirecting to root_path (devise default)
+    def storable_location?
+      request.get? && is_navigational_format? && !devise_controller? && !request.xhr? 
+    end
+
+    def store_user_location!
+      store_location_for(:user, request.fullpath)
+    end
+
+    def after_sign_in_path_for(resource_or_scope)
+      stored_location_for(resource_or_scope) || super
+    end
 
 end
