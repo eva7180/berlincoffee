@@ -19,7 +19,7 @@
   				</div>
   			</td>
 	      <td><%= item.product.name %></td>
-	      <td class="text-right"><%= number_to_currency item.product.price %></td>
+	      <td class="text-right"><%= number_to_euro item.product.price %></td>
 	      <td>
 	      	<%= form_for item do |f| %>
 	      	<div class="form-inline my-2 my-lg-0">
@@ -30,12 +30,12 @@
         	</div>
           <% end %>
         </td>
-	      <td class="text-right"><%= number_to_currency (item.product.price * item.quantity) %></td>
+	      <td class="text-right"><%= number_to_euro  (item.product.price * item.quantity) %></td>
 	      <td><%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></td>
 	    </tr>
 	    <% end %>
 	    <tr>
-	    	<td class="text-right" colspan="5"><strong><p>Cart Total: <%= number_to_currency current_cart.total_price %></p></strong></td>
+	    	<td class="text-right" colspan="5"><strong><p>Cart Total: <%= number_to_euro current_cart.total_price %></p></strong></td>
 	    </tr>
 	    <tr>
 	    	<td class="text-right" colspan="5"><%= link_to "Empty Cart", cart_path, :data => {:confirm => "Do you really want to empty your cart?", :method => "delete" } %></td>
@@ -47,7 +47,8 @@
 			<%= button_to "Continue Shopping", products_path, method: :get,  class: "submit-btn" %>
 		</div>
 		<div class="col-sm-6 text-right">
-			<%= form_with(url: '/payments/create') do |f| %>
+			<%= form_with(url: '/payments') do |f| %>
+				<%= f.hidden_field :cart_id, value: current_cart.id %>
   		  <%= render partial: "shared/stripe_checkout_button" %>
   		<% end %>
   	</div>

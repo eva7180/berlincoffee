@@ -40,7 +40,7 @@
             <p><strong>Package size: </strong><%= @product.size %>g</p>
           </div>
           <div class="col">
-            <p class="text-right"><%= @product.display_price %>€</p>
+            <p class="text-right"><%= number_to_euro @product.price %></p>
           </div>
         </div> <!-- end inner row 3 -->
         <div class="row"> <!-- inner row 4 -->
