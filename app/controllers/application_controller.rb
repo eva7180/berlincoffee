@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_cart
+  helper_method :number_to_euro
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, alert: exception.message
@@ -14,7 +15,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
+  # helper method to display prices with 2 decimals in €
+  def number_to_euro(amount)
+    view_context.number_to_currency(amount, unit: "€ ", separator: ",", delimiter: ".")
+  end
 
   protected
 

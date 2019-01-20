@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   end
   resources :order_items
   resource :cart, only: [:show, :destroy]
+
+  get 'orders/:id', to: "orders#show", as: "order"
   
   get 'simple_pages/about', to: "simple_pages#about"
   get 'simple_pages/contact', to: "simple_pages#contact"
   post 'simple_pages/thank_you'
 
   root 'simple_pages#index'
+
+  post 'payments', to: "payments#create"
 end
