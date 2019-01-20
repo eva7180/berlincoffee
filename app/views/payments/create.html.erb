@@ -3,7 +3,7 @@
 		<h4>Thank you for your purchase, <%= @user.first_name %>!</h4>
 		<p> We have charged <%= number_to_euro @cart.total_price %> to your card and sent a confirmation e-mail to <%= @stripe_email %>.</p>
 		<br>
-		<%= link_to "View your order", @order %>
+		<p><%= link_to "View your order", @order %></p>
 		<br>
 		<p> We hope you enjoy the coffee! </p>
 	</div>

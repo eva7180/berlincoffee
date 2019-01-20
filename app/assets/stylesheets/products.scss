@@ -46,6 +46,11 @@ a {
   color: #8A3324;
 }
 
+.card-body a {
+  color: #8A3324;
+  text-decoration: underline;
+}
+
 p.v-line::after {
   content: "";
   position: absolute;
