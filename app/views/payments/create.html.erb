@@ -4,6 +4,7 @@
 		<p> We have charged <%= number_to_euro @cart.total_price %> to your card and sent a confirmation e-mail to <%= @stripe_email %>.</p>
 		<br>
 		<p> We hope you enjoy the coffee! </p>	
+		<%= link_to "View your order", @order %>
 	</div>
 </div>
 

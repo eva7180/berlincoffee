@@ -4,14 +4,11 @@
   <div class="row">
     <div class="col-sm">
       <h2>
-        Order # <%= @order.id %>:
-        <%= link_to @order.product.name, @order %>
+        Order # <%= @order.id %>
       </h2>
-      <p><%= @order.product.description %></p>
-      <p><%= @order.product.variety %></p>
-      <p><%= @order.product.display_price %>€</p>
-      <p><%= @order.quantity %>items</p>
-      <p>Total Price:<%= '%.2f' % @total %>€</p>
+      <p><%= @order.user.email %></p>
+      <p><%= @order.status %></p>
+      <p>Total Price:<%= number_to_euro @order.total_price %></p>
     </div><!-- end col -->
   </div><!-- end row -->
 </div>

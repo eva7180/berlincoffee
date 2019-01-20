@@ -15,6 +15,23 @@ class PaymentsController < ApplicationController
 	      description: "Coffee",
 	      receipt_email: params[:stripeEmail]
 	    )
+
+	    # on checkout 
+	    # 1. create Order 
+	    # 2. feed order_items from cart into order / set item.cart_id to nil so item won't be deleted when cart gets destroyed
+	    # 3. save order
+	    # 4. destroy the cart
+	    if charge.paid
+	    	@order = Order.new(user_id: @user.id, status: "paid")
+	    	@cart.order_items.each do |item|
+	    		@order.order_items << item
+	    		item.cart_id = nil
+	    	end
+	    	@order.save
+	    	@cart.destroy
+	    	session[:cart_id] = nil
+	    end
+
 	  rescue Stripe::CardError => e
 	    # The card has been declined
 	    body = e.json_body
