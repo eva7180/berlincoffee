@@ -9,6 +9,7 @@
   resource :cart, only: [:show, :destroy]
 
   get 'orders/:id', to: "orders#show", as: "order"
+  get 'orders', to: "orders#index"
   
   get 'simple_pages/about', to: "simple_pages#about"
   get 'simple_pages/contact', to: "simple_pages#contact"

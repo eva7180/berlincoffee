@@ -1,43 +1,37 @@
-  <h1>All Orders</h1>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2">
-        <strong>Order ID</strong>
-      </div>
-      <div class="col-3">
-        <strong>Product Name</strong>
-      </div>
-      <div class="col-2">
-        <strong>Order Qty</strong>
-      </div>
-      <div class="col-2">
-        <strong>Item Price</strong>
-      </div>
-      <div class="col-2">
-        <strong>Total Price</strong>
-      </div>
+<h1>Your past orders</h1>
+<% if @orders.any? %>
+  <p>(Click on Order Ref# to view details)</p>
+  <div class="row">
+    <div class="col-2">
+      <strong>Order Ref.</strong>
     </div>
-    <div class="row">
-    <% @orders.each do |order| %>
-      <div class="col-2">
-        <%= order.id %>
-      </div>
-      <div class="col-3">
-        <%= order.product.name %>
-      </div>
-      <div class="col-2">
-        <%= order.quantity %>
-      </div>
-      <div class="col-2">
-        <%= order.product.display_price %>€
-      </div>
-      <div class="col-2">
-        <%= '%.2f' % (order.quantity * order.product.price) %>€
-      </div>
-      <div class="col-1">
-        <%= link_to 'Show', order_path(order) %>
-      </div>
-    <% end %>
+    <div class="col-3">
+      <strong>Order Date</strong>
+    </div>
+    <div class="col-2">
+      <strong>Status</strong>
+    </div>
+    <div class="col-2">
+      <strong>Total Price</strong>
     </div>
   </div>
+  <% @orders.each do |order| %>
+  <div class="row">
+    <div class="col-2">
+      <%= link_to "berlincoffee-#{order.id}", order_path(order) %>
+    </div>
+    <div class="col-3">
+      <%#= order.created_at %>
+    </div>
+    <div class="col-2">
+      <%= order.status %>
+    </div>
+    <div class="col-2">
+      <%= number_to_euro order.total_price %>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <p>You have no orders yet!</p>
+  <%= button_to "Start Shopping", products_path, method: :get,  class: "submit-btn" %>
+<% end %>
