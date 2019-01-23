@@ -8,7 +8,10 @@
     <div class="col-3">
       <strong>Order Date</strong>
     </div>
-    <div class="col-2">
+    <div class="col-2 text-right">
+      <strong># of items</strong>
+    </div>
+    <div class="col-2 text-right">
       <strong>Status</strong>
     </div>
     <div class="col-2 text-right">
@@ -25,7 +28,10 @@
       <%= order.created_at.strftime(" %d.%m.%Y") %>
       <% end %>
     </div>
-    <div class="col-2">
+    <div class="col-2 text-right">
+      <%= order.total_item_count %>
+    </div>
+    <div class="col-2 text-right">
       <%= order.status %>
     </div>
     <div class="col-2 text-right">

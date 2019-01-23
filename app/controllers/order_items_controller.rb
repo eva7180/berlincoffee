@@ -1,24 +1,27 @@
 class OrderItemsController < ApplicationController
+  before_action :set_cart
+  before_action :set_item, only: [:update, :destroy]
 
   def create
-    @cart = current_cart
-    @item = @cart.order_items.new(item_params)
-    @cart.save
-    session[:cart_id] = @cart.id
+    selected_product = Product.find(item_params[:product_id])
+
+    if @cart.products.include?(selected_product)
+      @item = @cart.order_items.find_by(product_id: selected_product)
+      @item.quantity += item_params[:quantity].to_i
+    else
+      @item = @cart.order_items.new(item_params)
+    end
+    @item.save
     redirect_to cart_path
   end
 
   def update
-    @cart = current_cart
-    @item = @cart.order_items.find(params[:id])
     @item.update(item_params)
-    @cart.save
+    @item.save
     redirect_to cart_path
   end
 
   def destroy
-    @cart = current_cart
-    @item = @cart.order_items.find(params[:id])
     @item.destroy
     @cart.save
     redirect_to cart_path
@@ -28,6 +31,14 @@ class OrderItemsController < ApplicationController
 
   def item_params
     params.require(:order_item).permit(:quantity, :product_id)
+  end
+
+  def set_cart
+    @cart = current_cart
+  end
+
+  def set_item
+    @item = @cart.order_items.find(params[:id])
   end
 
 end
