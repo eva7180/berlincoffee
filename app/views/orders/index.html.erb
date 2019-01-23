@@ -8,10 +8,13 @@
     <div class="col-3">
       <strong>Order Date</strong>
     </div>
-    <div class="col-2">
+    <div class="col-2 text-right">
+      <strong># of items</strong>
+    </div>
+    <div class="col-2 text-right">
       <strong>Status</strong>
     </div>
-    <div class="col-2">
+    <div class="col-2 text-right">
       <strong>Total Price</strong>
     </div>
   </div>
@@ -21,12 +24,17 @@
       <%= link_to "berlincoffee-#{order.id}", order_path(order) %>
     </div>
     <div class="col-3">
-      <%#= order.created_at %>
+      <% if order.created_at != nil %>
+      <%= order.created_at.strftime(" %d.%m.%Y") %>
+      <% end %>
     </div>
-    <div class="col-2">
+    <div class="col-2 text-right">
+      <%= order.total_item_count %>
+    </div>
+    <div class="col-2 text-right">
       <%= order.status %>
     </div>
-    <div class="col-2">
+    <div class="col-2 text-right">
       <%= number_to_euro order.total_price %>
     </div>
   </div>
