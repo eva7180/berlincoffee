@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :email %>
-    <%= f.email_field :email, class: "form-control", placeholder: "name@example.com" %>
+    <%= f.email_field :email, class: "form-control", placeholder: user_signed_in? ? current_user.email : "name@example.com" %>
   </div>
 
   <div class="form-group">

@@ -13,7 +13,9 @@
     <p>Order Date:</p>
   </div>
   <div class="col-6 col-md-4">
-    <p><%#= @order.created_at.strftime(" %d.%m.%Y") %></p>
+    <% if @order.created_at != nil %>
+    <p><%= @order.created_at.strftime(" %d.%m.%Y") %></p>
+    <% end %>
   </div>
 </div>
 <div class="row">
