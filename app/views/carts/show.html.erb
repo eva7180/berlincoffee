@@ -58,6 +58,22 @@
   	</div>
   </div>
 <% else %>
-	<p>Your shopping cart is empty.</p>
-	<%= button_to "Start Shopping", products_path, method: :get,  class: "submit-btn" %>
+<div class="row">
+	<div class="col">
+		<p>Your shopping cart is empty.</p>
+	</div>
+</div>
+<div class="row text-center">
+	<div class="col-4 col-md-2">
+		<%= button_to "Start Shopping", products_path, method: :get,  class: "submit-btn" %>
+	</div>
+	<% if !user_signed_in? %>
+	<div class="col-1">
+		or
+	</div>
+	<div class="col-4 col-md-2">
+		<%= button_to 'Login to view saved Cart', new_user_session_path, method: :get, class: "submit-btn" %>
+	</div>
+	<% end %>
+</div>
 <% end %>

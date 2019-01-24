@@ -13,6 +13,10 @@ class OrderItemsController < ApplicationController
     end
     @item.save
     session[:cart_id] = @cart.id
+    if user_signed_in? #assign cart to current_user so it will be stored for the user
+      @cart.user_id = current_user.id
+      @cart.save
+    end
     redirect_to cart_path
   end
 

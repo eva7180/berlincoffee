@@ -10,10 +10,14 @@ class ApplicationController < ActionController::Base
   end
 
   def current_cart
-    if session[:cart_id]
-      Cart.find(session[:cart_id])
-    else
-      Cart.new
+    if user_signed_in? && current_user.carts.any? #load existing cart if signed in user has any
+      Cart.find_by(user_id: current_user)
+    else #load cart from session or create new cart
+      if session[:cart_id]
+        Cart.find(session[:cart_id])
+      else
+        Cart.new
+      end
     end
   end
 
