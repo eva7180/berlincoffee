@@ -13,7 +13,7 @@ class OrderItemsController < ApplicationController
     end
     @item.save
     session[:cart_id] = @cart.id
-    if user_signed_in? #assign cart to current_user so it will be stored for the user
+    if user_signed_in? && (@cart.user_id == nil) #assign cart to current_user so it will be stored for the user
       @cart.user_id = current_user.id
       @cart.save
     end
