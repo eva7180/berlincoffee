@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :orders
   has_many :comments
-  has_many :carts
+  has_many :carts 
 
   after_create :welcome
   def welcome
