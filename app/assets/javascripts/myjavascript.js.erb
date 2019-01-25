@@ -1,14 +1,11 @@
-$(document).on('turbolinks:load', function () {
-	//fade out alerts and notices after they appear
-  $('.alert').delay(1600).slideUp(1200);
-  $('.notice').delay(1600).slideDown(1200);
+//raty plugin for star rating
 
-  //raty plugin for star rating
+var updateRating = function() {
   $('.rating').raty({
-  	starHalf: '<%= asset_path 'star-half.png' %>',
-  	starOff: '<%= asset_path 'star-off.png' %>',
-  	starOn: '<%= asset_path 'star-on.png' %>',
-  	scoreName: 'comment[rating]'
+    starHalf: '<%= asset_path 'star-half.png' %>',
+    starOff: '<%= asset_path 'star-off.png' %>',
+    starOn: '<%= asset_path 'star-on.png' %>',
+    scoreName: 'comment[rating]'
   });
 
   $('.rated').raty({
@@ -20,6 +17,14 @@ $(document).on('turbolinks:load', function () {
       return $(this).attr('data-score');
     }
   });
+};
+
+
+$(document).on('turbolinks:load ajax:success', function () {
+  updateRating();
+	//fade out alerts and notices after they appear
+  $('.alert').delay(1600).slideUp(1200);
+  $('.notice').delay(1600).slideDown(1200);
 
   // set height equal to width for responsive images
   var h = $('.product-img').outerWidth();

@@ -25,7 +25,7 @@
           </div>
           <div class="col-5">
             <% if @product.comments != [] %>
-              <p class="stars rated" data-score="<%= @product.average_rating %>"></p>
+              <p class="stars rated" id="average-rating" data-score="<%= @product.average_rating %>"></p>
             <% end %>
           </div>
         </div> <!-- end inner row 1 -->
@@ -66,9 +66,11 @@
       </div>
     </div> <!-- end 3rd col -->
   </div> <!-- end outer row -->
-  <div class="product-comments">
+  <div class="review-section">
     <%= render "new_comment" %>
-    <%= render "comments" %>
+    <div id="product-comments">
+      <%= render "comments" %>
+    </div>
   </div>
 
 </div> <!-- end container -->
