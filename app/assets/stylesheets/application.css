@@ -53,9 +53,9 @@ h4 {
 }
 
 .btn-outline-light:hover {
-    color: #8A3324;
-    border-color: #8A3324;
-    background-color: #FDBEB4;
+  color: #8A3324;
+  border-color: #8A3324;
+  background-color: #FDBEB4;
 }
 
 /* Footer always flush at bottom */
