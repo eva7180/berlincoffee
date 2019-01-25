@@ -1,15 +1,13 @@
 //raty plugin for star rating
 
-var initRating = function() {
+var updateRating = function() {
   $('.rating').raty({
     starHalf: '<%= asset_path 'star-half.png' %>',
     starOff: '<%= asset_path 'star-off.png' %>',
     starOn: '<%= asset_path 'star-on.png' %>',
     scoreName: 'comment[rating]'
   });
-};
 
-var initRated = function() {
   $('.rated').raty({
     starHalf: '<%= asset_path 'star-half.png' %>',
     starOff: '<%= asset_path 'star-off.png' %>',
@@ -22,14 +20,11 @@ var initRated = function() {
 };
 
 
-
-$(document).on('turbolinks:load ajaxSuccess', function () {
+$(document).on('turbolinks:load ajax:success', function () {
+  updateRating();
 	//fade out alerts and notices after they appear
   $('.alert').delay(1600).slideUp(1200);
   $('.notice').delay(1600).slideDown(1200);
-
-  initRating();
-  initRated();
 
   // set height equal to width for responsive images
   var h = $('.product-img').outerWidth();

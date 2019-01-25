@@ -1,4 +1,4 @@
-<% if signed_in? %>
+	<% if signed_in? %>
 	<%= form_for([@product, @product.comments.build], remote: true) do |f| %>
 	<div class="card">
 		<div class="card-header">
