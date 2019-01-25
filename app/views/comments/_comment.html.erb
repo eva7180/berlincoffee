@@ -2,7 +2,7 @@
   <div class="card-header text-md-right">
     <%= comment.user.first_name %>, <%= "#{time_ago_in_words(comment.created_at)} ago" %>
     <% if signed_in? && current_user.admin? %>
-      <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "delete-comment" %>
     <% end %>
   </div>
   <div class="card-body">

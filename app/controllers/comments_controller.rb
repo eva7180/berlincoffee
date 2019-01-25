@@ -20,7 +20,12 @@ class CommentsController < ApplicationController
 		@comment = Comment.find(params[:id])
 		product = @comment.product
 		@comment.destroy
-    redirect_to product
+
+		respond_to do |format|
+      format.html { redirect_to product }
+      format.json { head :no_content }
+      format.js
+    end
 	end
 
 	private
