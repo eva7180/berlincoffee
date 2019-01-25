@@ -2,7 +2,9 @@
 
   <div class="container-fluid">
     <div class="row">
+    <% cache (cache_key_for_products) do %>
       <%= render @products %> <!-- short hand for rendering 'partial: "product"', looping through "@products" and making variable "product" available locally in partial. -->
+    <% end %>
     </div><!-- end row -->
   </div>
   

@@ -1,5 +1,7 @@
-<% @comments.each do |comment| %>  
+<% @comments.each do |comment| %>
+<% cache comment do %>  
   <%= render comment %>
+<% end %>
 <% end %>
 
 <div class="pagination justify-content-end">

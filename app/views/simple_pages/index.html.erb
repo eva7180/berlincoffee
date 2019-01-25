@@ -22,7 +22,9 @@
       <% end %>
     </ol> <!-- end carousel-indicators -->
     <div class="carousel-inner">
+    <% cache @featured_products do %>
       <% @featured_products.each do |product| %>
+      <% cache product do %>
       <div class="carousel-item<%= " active" if product == @featured_products.first %>">
         <div class="carousel-caption d-block">
           <p><strong><%= product.name.upcase %></strong></p>
@@ -45,6 +47,8 @@
         </div>
       </div><!-- end carousel-item -->
       <% end %>
+      <% end %>
+    <% end %>
     </div> <!-- end carousel-inner -->
     <a class="carousel-control-prev" href="#featured-products-reel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

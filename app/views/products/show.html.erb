@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="row justify-content-between">
     <div class="col-3">
+<% cache @product do %>
       <% if @products.index(@product) > 0 %>
         <%= link_to 'Prev <<', @prev_product %>
       <% end %>
@@ -54,6 +55,7 @@
               </div>
             </div>
             <% end %>
+<% end %>
           </div>
         </div><!-- end inner row 4 -->
         <!-- <div class="row"> --> <!-- inner row 5 -->
@@ -69,7 +71,9 @@
   <div class="review-section">
     <%= render "new_comment" %>
     <div id="product-comments">
+    <% cache @comments do %>
       <%= render "comments" %>
+    <% end %>
     </div>
   </div>
 
