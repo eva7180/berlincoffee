@@ -26,7 +26,6 @@ class ApplicationController < ActionController::Base
     view_context.number_to_currency(amount, unit: "€ ", separator: ",", delimiter: ".")
   end
 
-
   protected
 
   def configure_permitted_parameters

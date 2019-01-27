@@ -9,6 +9,12 @@ class Cart < ApplicationRecord
     self.order_items.collect { |item| item.product.price * item.quantity }.sum
   end
 
+  def items_count
+    Rails.cache.fetch([cache_key, __method__]) do
+      order_items.count
+    end
+  end
+
   private
 
   def update_status
