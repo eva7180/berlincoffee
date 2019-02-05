@@ -18,4 +18,6 @@
   root 'simple_pages#index'
 
   post 'payments', to: "payments#create"
+
+  mount ActionCable.server => '/cable'
 end
