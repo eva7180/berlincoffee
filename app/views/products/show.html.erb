@@ -12,7 +12,7 @@
       <% end %>
     </div>
   </div>
-  <div class="row"> <!-- outer row -->
+  <div class="row" data-product-id="<%= @product.id %>"> <!-- outer row -->
     <div class="col-12 col-md-4"> <!-- 2nd col -->
         <div class="product-img">
           <%= image_tag(@product.image_url, class: "img-zoom", data_zoom_image: @product.image_url ) %>
