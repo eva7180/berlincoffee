@@ -69,10 +69,10 @@
     </div> <!-- end 3rd col -->
   </div> <!-- end outer row -->
   <div class="review-section">
+    <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
     <%= render "new_comment" %>
     <div id="product-comments">
     <% cache @comments do %>
-      <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
       <%= render "comments" %>
     <% end %>
     </div>
