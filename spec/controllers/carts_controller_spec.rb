@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CartsController, type: :controller do
-	context 'GET #show' do
+	describe 'GET #show' do
 		it 'renders the show template ' do
 			get :show
 			expect(response).to be_ok
@@ -9,7 +9,7 @@ RSpec.describe CartsController, type: :controller do
 		end
 	end
 
-	context 'DELETE #destroy' do
+	describe 'DELETE #destroy' do
 	end
 
 
