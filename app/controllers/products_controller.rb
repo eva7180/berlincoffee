@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     @next_product = @products[(@products.index(@product)+1)]
     @prev_product = @products[(@products.index(@product)-1)]
 
-    @order_item = current_cart.order_items.new
+    @order_item = OrderItem.new
 
     @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 3)
   end
