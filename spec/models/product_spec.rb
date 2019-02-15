@@ -1,33 +1,41 @@
 require 'rails_helper'
 
 describe Product do
+  let(:product) {FactoryBot.create(:product)}
+  let(:anotherproduct) {FactoryBot.create(:product)}
+  let(:lowest) {FactoryBot.create(:comment, product: product, rating: 1)}
+  let(:middle) {FactoryBot.create(:comment, product: product, rating: 3)}
+  let(:highest) {FactoryBot.create(:comment, product: product, rating: 5)}
+
+  it "returns all products with name including search term" do
+    expect(Product.search("Test")).to eq [product, anotherproduct]
+    expect(Product.search("Foo")).to eq []
+  end
+
+  it "is only valid with a name" do
+    expect(Product.new(description: "Gives a real buzz")).not_to be_valid
+    expect(Product.new(name: "Valid Name")).to be_valid
+  end
+
   context "when the product has comments" do
-    let(:product) {Product.create!(name: "Good Coffee")}
-    let(:user) {User.create!(email: "test@test.com", password: "password")}
     before do
-      product.comments.create!(rating: 1, user: user, body: "Bitter!")
-      product.comments.create!(rating: 3, user: user, body: "Ok!")
-      product.comments.create!(rating: 5, user: user, body: "Great!")
+      lowest
+      middle
+      highest
     end
-    # let(:comment1) {product.comments.create!(rating: 1, user: user, body: "Bitter!")}
-    # let(:comment2) {product.comments.create!(rating: 3, user: user, body: "Ok!")}
-    # let(:comment3) {product.comments.create!(rating: 5, user: user, body: "Great!")}
 
-    # it "returns the comment with highest rating" do
-    #   expect(product.highest_rating_comment).to eq product.comments.create!(rating: 5, user: user, body: "Great!")
-    # end
+    it "returns the comment with highest rating" do
+      expect(product.highest_rating_comment).to eq highest
+    end
 
-    # it "returns the comment with lowest rating" do
-    #   expect(product.lowest_rating_comment).to eq product.comments.create!(rating: 1, user: user, body: "Bitter!")
-    # end
+    it "returns the comment with lowest rating" do
+      expect(product.lowest_rating_comment).to eq lowest
+    end
 
     it "returns the average rating of all comments" do
       expect(product.average_rating).to eq 3
     end
 
-    it "is not valid without a name" do
-      expect(Product.new(description: "Gives a real buzz")).not_to be_valid
-    end
   end
   
 end
