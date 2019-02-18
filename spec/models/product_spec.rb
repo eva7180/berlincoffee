@@ -15,6 +15,7 @@ describe Product do
   it "is only valid with a name" do
     expect(Product.new(description: "Gives a real buzz")).not_to be_valid
     expect(Product.new(name: "Valid Name")).to be_valid
+    expect(product).to be_valid
   end
 
   context "when the product has comments" do

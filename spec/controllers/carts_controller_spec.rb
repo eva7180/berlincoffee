@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CartsController, type: :controller do
+
 	describe 'GET #show' do
 		it 'renders the show template ' do
 			get :show
@@ -10,7 +11,8 @@ RSpec.describe CartsController, type: :controller do
 	end
 
 	describe 'DELETE #destroy' do
+		it "deletes current_cart from database" do
+			#tbc
+		end
 	end
-
-
 end
