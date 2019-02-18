@@ -6,5 +6,6 @@ test:
 
 production:
   adapter: postgresql
-  url: postgres://uaofkxmgvsfjmf:ad1b24da3744439be96f365a9e04af2ef6d65abdfa8eec25a0ba39114ea80ba7@ec2-23-21-188-236.compute-1.amazonaws.com:5432/d1q4ue9kc7l0p #<%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: berlincoffee_production
+  url: postgres://uaofkxmgvsfjmf:ad1b24da3744439be96f365a9e04af2ef6d65abdfa8eec25a0ba39114ea80ba7@ec2-23-21-188-236.compute-1.amazonaws.com:5432/d1q4ue9kc7l0p
+  #channel_prefix: berlincoffee_production
+
