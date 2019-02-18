@@ -14,4 +14,13 @@ class UserMailer < ApplicationMailer
   		to: user.email,
   		subject: "Thanks for registering, #{user.first_name}!")
   end
+
+  def order_confirmation(user, stripe_email, cart)
+    @cart = cart
+    @user = user
+    mail(
+      to: stripe_email, 
+      subject: "Your order at berlincoffee has been received, #{user.first_name}!")
+  end
+
 end

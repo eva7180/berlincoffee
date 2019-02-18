@@ -30,6 +30,8 @@ class PaymentsController < ApplicationController
 	    	@order.save
 	    	@cart.destroy
 	    	session[:cart_id] = nil
+
+	    	UserMailer.order_confirmation(@user, @stripe_email, @cart).deliver_now
 	    end
 
 	  rescue Stripe::CardError => e
